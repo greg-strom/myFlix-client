@@ -5,7 +5,7 @@
 48C:\Users\gbstr\Documents\myFlix-client\README.md132736405323142958 0
 93C:\Users\gbstr\Documents\myFlix-client\node_modules\scheduler\umd\scheduler.production.min.js121436361000000000 0
 108C:\Users\gbstr\Documents\myFlix-client\node_modules\react-dom\cjs\react-dom-server.browser.production.min.js121436361000000000 0
-51C:\Users\gbstr\Documents\myFlix-client\package.json132736393999653691 0
+51C:\Users\gbstr\Documents\myFlix-client\package.json132737192481962100 0
 93C:\Users\gbstr\Documents\myFlix-client\node_modules\scheduler\cjs\scheduler.production.min.js121436361000000000 0
 49C:\Users\gbstr\Documents\myFlix-client\.gitignore132736384537935492 0
 56C:\Users\gbstr\Documents\myFlix-client\package-lock.json132736394000431609 0
