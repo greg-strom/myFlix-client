@@ -29606,17 +29606,46 @@ var MainView = /*#__PURE__*/function (_React$Component) {
   var _super = _createSuper(MainView);
 
   function MainView() {
+    var _this;
+
     _classCallCheck(this, MainView);
 
-    return _super.apply(this, arguments);
+    _this = _super.call(this);
+    _this.state = {
+      movies: [{
+        _id: 1,
+        Title: 'Inception',
+        Description: 'desc1...',
+        ImagePath: '...'
+      }, {
+        _id: 2,
+        Title: 'The Shawshank Redemption',
+        Description: 'desc2...',
+        ImagePath: '...'
+      }, {
+        _id: 3,
+        Title: 'Gladiator',
+        Description: 'desc3...',
+        ImagePath: '...'
+      }]
+    };
+    return _this;
   }
 
   _createClass(MainView, [{
     key: "render",
     value: function render() {
+      var movies = this.state.movies;
+      if (movies.length === 0) return /*#__PURE__*/_react.default.createElement("div", {
+        className: "main-view"
+      }, "The list is empty!");
       return /*#__PURE__*/_react.default.createElement("div", {
         className: "main-view"
-      }, /*#__PURE__*/_react.default.createElement("div", null, "Inception."), /*#__PURE__*/_react.default.createElement("div", null, "The Shawshank Redemption"), /*#__PURE__*/_react.default.createElement("div", null, "Gladiator"));
+      }, movies.map(function (movie) {
+        return /*#__PURE__*/_react.default.createElement("div", {
+          key: movie._id
+        }, movie.Title);
+      }));
     }
   }]);
 
@@ -29786,7 +29815,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54781" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50158" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
