@@ -29764,18 +29764,18 @@ var MainView = /*#__PURE__*/function (_React$Component) {
       movies: [{
         _id: 1,
         Title: 'Inception',
-        Description: 'desc1...',
-        ImagePath: '...'
+        Description: 'Leonardo DiCaprio leads a team on a dangerous mission to invade the dreams of a slumbering rich kid.',
+        ImagePath: '../../../img/Inception.jpg'
       }, {
         _id: 2,
         Title: 'The Shawshank Redemption',
-        Description: 'desc2...',
-        ImagePath: '...'
+        Description: 'Wrongly incarcerated for murder, Tim Robbins grapples with existential questions.',
+        ImagePath: '../../../img/Shawshank.jpg'
       }, {
         _id: 3,
         Title: 'Gladiator',
-        Description: 'desc3...',
-        ImagePath: '...'
+        Description: 'Russell Crowe avenges his family against the bozo emperor Commodus in this classic Roman epic.',
+        ImagePath: '../../../img/Gladiator.jpg'
       }],
       selectedMovie: null
     };
@@ -29985,7 +29985,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59876" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52074" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
