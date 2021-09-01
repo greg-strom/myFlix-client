@@ -29711,7 +29711,13 @@ var MovieView = /*#__PURE__*/function (_React$Component) {
 }(_react.default.Component);
 
 exports.MovieView = MovieView;
-},{"react":"../node_modules/react/index.js"}],"components/main-view/main-view.jsx":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js"}],"../img/Gladiator.jpg":[function(require,module,exports) {
+module.exports = "/Gladiator.2f6a5fec.jpg";
+},{}],"../img/Inception.jpg":[function(require,module,exports) {
+module.exports = "/Inception.df347efd.jpg";
+},{}],"../img/Shawshank.jpg":[function(require,module,exports) {
+module.exports = "/Shawshank.0abc329b.jpg";
+},{}],"components/main-view/main-view.jsx":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -29724,6 +29730,12 @@ var _react = _interopRequireDefault(require("react"));
 var _movieCard = require("../movie-card/movie-card");
 
 var _movieView = require("../movie-view/movie-view");
+
+var _Gladiator = _interopRequireDefault(require("../../../img/Gladiator.jpg"));
+
+var _Inception = _interopRequireDefault(require("../../../img/Inception.jpg"));
+
+var _Shawshank = _interopRequireDefault(require("../../../img/Shawshank.jpg"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -29765,17 +29777,17 @@ var MainView = /*#__PURE__*/function (_React$Component) {
         _id: 1,
         Title: 'Inception',
         Description: 'Leonardo DiCaprio leads a team on a dangerous mission to invade the dreams of a slumbering rich kid.',
-        ImagePath: '../../../img/Inception.jpg'
+        ImagePath: _Inception.default
       }, {
         _id: 2,
         Title: 'The Shawshank Redemption',
         Description: 'Wrongly incarcerated for murder, Tim Robbins grapples with existential questions.',
-        ImagePath: '../../../img/Shawshank.jpg'
+        ImagePath: _Shawshank.default
       }, {
         _id: 3,
         Title: 'Gladiator',
         Description: 'Russell Crowe avenges his family against the bozo emperor Commodus in this classic Roman epic.',
-        ImagePath: '../../../img/Gladiator.jpg'
+        ImagePath: _Gladiator.default
       }],
       selectedMovie: null
     };
@@ -29824,7 +29836,7 @@ var MainView = /*#__PURE__*/function (_React$Component) {
 
 var _default = MainView;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","../movie-card/movie-card":"components/movie-card/movie-card.jsx","../movie-view/movie-view":"components/movie-view/movie-view.jsx"}],"../../../../AppData/Roaming/nvm/v14.17.5/node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","../movie-card/movie-card":"components/movie-card/movie-card.jsx","../movie-view/movie-view":"components/movie-view/movie-view.jsx","../../../img/Gladiator.jpg":"../img/Gladiator.jpg","../../../img/Inception.jpg":"../img/Inception.jpg","../../../img/Shawshank.jpg":"../img/Shawshank.jpg"}],"../../../../AppData/Roaming/nvm/v14.17.5/node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
 var bundleURL = null;
 
 function getBundleURLCached() {

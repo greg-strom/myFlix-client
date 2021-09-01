@@ -2,15 +2,19 @@ import React from 'react';
 import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
 
+import GladiatorImg from '../../../img/Gladiator.jpg';
+import InceptionImg from '../../../img/Inception.jpg';
+import ShawshankImg from '../../../img/Shawshank.jpg';
+
 class MainView extends React.Component {
 
   constructor(){
     super();
     this.state = {
       movies: [
-        { _id: 1, Title: 'Inception', Description: 'Leonardo DiCaprio leads a team on a dangerous mission to invade the dreams of a slumbering rich kid.', ImagePath: '../../../img/Inception.jpg'},
-        { _id: 2, Title: 'The Shawshank Redemption', Description: 'Wrongly incarcerated for murder, Tim Robbins grapples with existential questions.', ImagePath: '../../../img/Shawshank.jpg'},
-        { _id: 3, Title: 'Gladiator', Description: 'Russell Crowe avenges his family against the bozo emperor Commodus in this classic Roman epic.', ImagePath: '../../../img/Gladiator.jpg'}
+        { _id: 1, Title: 'Inception', Description: 'Leonardo DiCaprio leads a team on a dangerous mission to invade the dreams of a slumbering rich kid.', ImagePath: InceptionImg},
+        { _id: 2, Title: 'The Shawshank Redemption', Description: 'Wrongly incarcerated for murder, Tim Robbins grapples with existential questions.', ImagePath: ShawshankImg},
+        { _id: 3, Title: 'Gladiator', Description: 'Russell Crowe avenges his family against the bozo emperor Commodus in this classic Roman epic.', ImagePath: GladiatorImg}
       ],
       selectedMovie: null
     }
