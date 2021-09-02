@@ -1,0 +1,101 @@
+var helpers = require("../../../../../../AppData/Roaming/nvm/v14.17.5/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+try {
+  var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+  _parcelHelpers.defineInteropFlag(exports);
+  var _react = require('react');
+  var _reactDefault = _parcelHelpers.interopDefault(_react);
+  var _movieCardMovieCard = require('../movie-card/movie-card');
+  var _movieViewMovieView = require('../movie-view/movie-view');
+  var _imgGladiatorJpg = require('../../../img/Gladiator.jpg');
+  var _imgGladiatorJpgDefault = _parcelHelpers.interopDefault(_imgGladiatorJpg);
+  var _imgInceptionJpg = require('../../../img/Inception.jpg');
+  var _imgInceptionJpgDefault = _parcelHelpers.interopDefault(_imgInceptionJpg);
+  var _imgShawshankJpg = require('../../../img/Shawshank.jpg');
+  var _imgShawshankJpgDefault = _parcelHelpers.interopDefault(_imgShawshankJpg);
+  var _jsxFileName = "C:\\Users\\gbstr\\Documents\\GitHub\\myFlix-client\\src\\components\\main-view\\main-view.jsx";
+  class MainView extends _reactDefault.default.Component {
+    constructor() {
+      super();
+      this.state = {
+        movies: [{
+          _id: 1,
+          Title: 'Inception',
+          Description: 'Leonardo DiCaprio leads a team on a dangerous mission to invade the dreams of a slumbering rich kid.',
+          ImagePath: _imgInceptionJpgDefault.default
+        }, {
+          _id: 2,
+          Title: 'The Shawshank Redemption',
+          Description: 'Wrongly incarcerated for murder, Tim Robbins grapples with existential questions.',
+          ImagePath: _imgShawshankJpgDefault.default
+        }, {
+          _id: 3,
+          Title: 'Gladiator',
+          Description: 'Russell Crowe avenges his family against the bozo emperor Commodus in this classic Roman epic.',
+          ImagePath: _imgGladiatorJpgDefault.default
+        }],
+        selectedMovie: null
+      };
+    }
+    setSelectedMovie(newSelectedMovie) {
+      this.setState({
+        selectedMovie: newSelectedMovie
+      });
+    }
+    render() {
+      const {movies, selectedMovie} = this.state;
+      if (movies.length === 0) return (
+        /*#__PURE__*/_reactDefault.default.createElement("div", {
+          className: "main-view",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 32,
+            columnNumber: 37
+          }
+        }, "The list is empty!")
+      );
+      return (
+        /*#__PURE__*/_reactDefault.default.createElement("div", {
+          className: "main-view",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 35,
+            columnNumber: 7
+          }
+        }, selectedMovie ? /*#__PURE__*/_reactDefault.default.createElement(_movieViewMovieView.MovieView, {
+          movie: selectedMovie,
+          onBackClick: newSelectedMovie => {
+            this.setSelectedMovie(newSelectedMovie);
+          },
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 37,
+            columnNumber: 13
+          }
+        }) : movies.map(movie => /*#__PURE__*/_reactDefault.default.createElement(_movieCardMovieCard.MovieCard, {
+          key: movie._id,
+          movie: movie,
+          onMovieClick: movie => {
+            this.setSelectedMovie(movie);
+          },
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 39,
+            columnNumber: 13
+          }
+        })))
+      );
+    }
+  }
+  exports.default = MainView;
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
