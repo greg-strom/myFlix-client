@@ -2,9 +2,18 @@ import React from 'react';
 import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
 
-import GladiatorImg from '../../../img/Gladiator.jpg';
-import InceptionImg from '../../../img/Inception.jpg';
-import ShawshankImg from '../../../img/Shawshank.jpg';
+const InceptionImg = new URL(
+  '../../../dist/img/Inception.jpg',
+  import.meta.url
+);
+const GladiatorImg = new URL(
+  '../../../dist/img/Gladiator.jpg',
+  import.meta.url
+);
+const ShawshankImg = new URL(
+  '../../../dist/img/Shawshank.jpg',
+  import.meta.url
+);
 
 class MainView extends React.Component {
 
