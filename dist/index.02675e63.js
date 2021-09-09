@@ -26277,35 +26277,10 @@ try {
   var _registrationViewRegistrationView = require('../registration-view/registration-view');
   require('./main-view.scss');
   var _jsxFileName = "C:\\Users\\gbstr\\Documents\\GitHub\\myFlix-client\\src\\components\\main-view\\main-view.jsx";
-  /*
-  const InceptionImg = new URL(
-  '../../../dist/img/Inception.jpg',
-  import.meta.url
-  );
-  const GladiatorImg = new URL(
-  '../../../dist/img/Gladiator.jpg',
-  import.meta.url
-  );
-  const ShawshankImg = new URL(
-  '../../../dist/img/Shawshank.jpg',
-  import.meta.url
-  );
-  */
   class MainView extends _reactDefault.default.Component {
-    /*
-    constructor(){
-    super();
-    this.state = {
-    movies: [
-    { _id: 1, Title: 'Inception', Description: 'Leonardo DiCaprio leads a team on a dangerous mission to invade the dreams of a slumbering rich kid.', ImagePath: InceptionImg},
-    { _id: 2, Title: 'The Shawshank Redemption', Description: 'Wrongly incarcerated for murder, Tim Robbins grapples with existential questions.', ImagePath: ShawshankImg},
-    { _id: 3, Title: 'Gladiator', Description: 'Russell Crowe avenges his family against the bozo emperor Commodus in this classic Roman epic.', ImagePath: GladiatorImg}
-    ],
-    selectedMovie: null
-    }
-    }*/
     constructor() {
       super();
+      // initial state for all of these parameters set to null
       this.state = {
         movies: [],
         selectedMovie: null,
@@ -26313,6 +26288,7 @@ try {
         registered: null
       };
     }
+    /*this code fetches movie data from my heroku app and puts it in the movies array*/
     componentDidMount() {
       _axiosDefault.default.get('https://cfmovieapp.herokuapp.com/movies').then(response => {
         this.setState({
@@ -26322,6 +26298,8 @@ try {
         console.log(error);
       });
     }
+    /*this function is triggered when a movie is clicked.
+    It changes the state of the selectedMovie propery to the clicked movie*/
     setSelectedMovie(newSelectedMovie) {
       this.setState({
         selectedMovie: newSelectedMovie
@@ -26332,6 +26310,7 @@ try {
         registered
       });
     }
+    /*When a user logs in, this function changes the user property to that user*/
     onLoggedIn(user) {
       this.setState({
         user
@@ -26339,24 +26318,28 @@ try {
     }
     render() {
       const {movies, selectedMovie, user, registered} = this.state;
+      /*This code renders the RegistrationView if the user is not registered.
+      Otherwise, we move on.*/
       if (!registered) return (
         /*#__PURE__*/_reactDefault.default.createElement(_registrationViewRegistrationView.RegistrationView, {
           onRegistration: registered => this.onRegistration(registered),
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 83,
+            lineNumber: 63,
             columnNumber: 29
           }
         })
       );
+      /*This code renders the LoginView if the user is not logged in.
+      Otherwise, we move on.*/
       if (!user) return (
         /*#__PURE__*/_reactDefault.default.createElement(_loginViewLoginView.LoginView, {
           onLoggedIn: user => this.onLoggedIn(user),
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 85,
+            lineNumber: 67,
             columnNumber: 23
           }
         })
@@ -26367,18 +26350,22 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 87,
+            lineNumber: 69,
             columnNumber: 37
           }
         })
       );
+      /*This code checks whether there is a movie that has been selected.
+      If there is, then this displays that movie's details using MovieView;
+      if there is not a movie that has been selected, then all movies are displayed
+      using MovieCard.*/
       return (
         /*#__PURE__*/_reactDefault.default.createElement("div", {
           className: "main-view",
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 90,
+            lineNumber: 76,
             columnNumber: 7
           }
         }, selectedMovie ? /*#__PURE__*/_reactDefault.default.createElement(_movieViewMovieView.MovieView, {
@@ -26389,7 +26376,7 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 92,
+            lineNumber: 78,
             columnNumber: 13
           }
         }) : movies.map(movie => /*#__PURE__*/_reactDefault.default.createElement(_movieCardMovieCard.MovieCard, {
@@ -26401,7 +26388,7 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 94,
+            lineNumber: 80,
             columnNumber: 13
           }
         })))
@@ -28374,7 +28361,7 @@ try {
     _s();
     const [username, setUsername] = _react.useState('');
     const [password, setPassword] = _react.useState('');
-    const handleSubmit = () => {
+    const handleSubmit = e => {
       e.preventDefault();
       console.log(username, password);
       /*Send a request to the server for authentication*/
@@ -29643,7 +29630,7 @@ try {
     const [password, setPassword] = _react.useState('');
     const [email, setEmail] = _react.useState('');
     const [birthdate, setBirthdate] = _react.useState('');
-    const handleSubmit = () => {
+    const handleSubmit = e => {
       e.preventDefault();
       console.log(username, password, email, birthdate);
       /*Send a request to the server for authentication*/
