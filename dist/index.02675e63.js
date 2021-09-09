@@ -29509,6 +29509,8 @@ try {
   });
   var _react = require('react');
   var _reactDefault = _parcelHelpers.interopDefault(_react);
+  var _propTypes = require('prop-types');
+  var _propTypesDefault = _parcelHelpers.interopDefault(_propTypes);
   require('./movie-view.scss');
   var _jsxFileName = "C:\\Users\\gbstr\\Documents\\GitHub\\myFlix-client\\src\\components\\movie-view\\movie-view.jsx";
   class MovieView extends _reactDefault.default.Component {
@@ -29520,7 +29522,7 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 11,
+            lineNumber: 12,
             columnNumber: 9
           }
         }, /*#__PURE__*/_reactDefault.default.createElement("div", {
@@ -29528,7 +29530,7 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 12,
+            lineNumber: 13,
             columnNumber: 11
           }
         }, /*#__PURE__*/_reactDefault.default.createElement("img", {
@@ -29536,7 +29538,7 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 13,
+            lineNumber: 14,
             columnNumber: 13
           }
         })), /*#__PURE__*/_reactDefault.default.createElement("div", {
@@ -29544,7 +29546,7 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 15,
+            lineNumber: 16,
             columnNumber: 11
           }
         }, /*#__PURE__*/_reactDefault.default.createElement("span", {
@@ -29552,7 +29554,7 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 16,
+            lineNumber: 17,
             columnNumber: 13
           }
         }, "Title: "), /*#__PURE__*/_reactDefault.default.createElement("span", {
@@ -29560,7 +29562,7 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 17,
+            lineNumber: 18,
             columnNumber: 13
           }
         }, movie.Title)), /*#__PURE__*/_reactDefault.default.createElement("div", {
@@ -29568,7 +29570,7 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 19,
+            lineNumber: 20,
             columnNumber: 11
           }
         }, /*#__PURE__*/_reactDefault.default.createElement("span", {
@@ -29576,7 +29578,7 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 20,
+            lineNumber: 21,
             columnNumber: 13
           }
         }, "Description: "), /*#__PURE__*/_reactDefault.default.createElement("span", {
@@ -29584,7 +29586,7 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 21,
+            lineNumber: 22,
             columnNumber: 13
           }
         }, movie.Description)), /*#__PURE__*/_reactDefault.default.createElement("button", {
@@ -29594,20 +29596,28 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 23,
+            lineNumber: 24,
             columnNumber: 11
           }
         }, "Back"))
       );
     }
   }
+  MovieView.propTypes = {
+    movie: _propTypesDefault.default.shape({
+      Title: _propTypesDefault.default.string.isRequired,
+      ImagePath: _propTypesDefault.default.string.isRequired,
+      Description: _propTypesDefault.default.string.isRequired
+    }).isRequired,
+    onBackClick: _propTypesDefault.default.func.isRequired
+  };
   helpers.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
 
-},{"react":"3b2NM","./movie-view.scss":"4iZ2Z","@parcel/transformer-js/lib/esmodule-helpers.js":"54Ghd","../../../../../../AppData/Roaming/nvm/v14.17.5/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"38HIh"}],"4iZ2Z":[function() {},{}],"7gvH2":[function(require,module,exports) {
+},{"react":"3b2NM","prop-types":"4dfy5","./movie-view.scss":"4iZ2Z","@parcel/transformer-js/lib/esmodule-helpers.js":"54Ghd","../../../../../../AppData/Roaming/nvm/v14.17.5/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"38HIh"}],"4iZ2Z":[function() {},{}],"7gvH2":[function(require,module,exports) {
 var helpers = require("../../../../../../AppData/Roaming/nvm/v14.17.5/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
