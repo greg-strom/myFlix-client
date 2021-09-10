@@ -26406,7 +26406,7 @@ try {
           __source: {
             fileName: _jsxFileName,
             lineNumber: 86,
-            columnNumber: 15
+            columnNumber: 13
           }
         }, /*#__PURE__*/_reactDefault.default.createElement(_movieCardMovieCard.MovieCard, {
           key: movie._id,
@@ -26418,7 +26418,7 @@ try {
           __source: {
             fileName: _jsxFileName,
             lineNumber: 87,
-            columnNumber: 17
+            columnNumber: 15
           }
         }))))
       );
