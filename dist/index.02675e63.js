@@ -26282,6 +26282,8 @@ try {
   var _axiosDefault = _parcelHelpers.interopDefault(_axios);
   var _reactBootstrapRow = require('react-bootstrap/Row');
   var _reactBootstrapRowDefault = _parcelHelpers.interopDefault(_reactBootstrapRow);
+  var _reactBootstrapCol = require('react-bootstrap/Col');
+  var _reactBootstrapColDefault = _parcelHelpers.interopDefault(_reactBootstrapCol);
   var _loginViewLoginView = require('../login-view/login-view');
   var _movieCardMovieCard = require('../movie-card/movie-card');
   var _movieViewMovieView = require('../movie-view/movie-view');
@@ -26337,7 +26339,7 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 64,
+            lineNumber: 65,
             columnNumber: 29
           }
         })
@@ -26350,7 +26352,7 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 68,
+            lineNumber: 69,
             columnNumber: 23
           }
         })
@@ -26361,7 +26363,7 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 70,
+            lineNumber: 71,
             columnNumber: 37
           }
         })
@@ -26376,15 +26378,24 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 77,
+            lineNumber: 78,
             columnNumber: 7
           }
         }, selectedMovie ? /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapRowDefault.default, {
+          className: "justify-content-md-center",
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 80,
+            lineNumber: 81,
             columnNumber: 13
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapColDefault.default, {
+          md: 8,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 82,
+            columnNumber: 15
           }
         }, /*#__PURE__*/_reactDefault.default.createElement(_movieViewMovieView.MovieView, {
           movie: selectedMovie,
@@ -26394,10 +26405,10 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 81,
-            columnNumber: 15
+            lineNumber: 83,
+            columnNumber: 17
           }
-        })) : movies.map(movie => /*#__PURE__*/_reactDefault.default.createElement(_movieCardMovieCard.MovieCard, {
+        }))) : movies.map(movie => /*#__PURE__*/_reactDefault.default.createElement(_movieCardMovieCard.MovieCard, {
           key: movie._id,
           movie: movie,
           onMovieClick: newSelectedMovie => {
@@ -26406,7 +26417,7 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 85,
+            lineNumber: 88,
             columnNumber: 13
           }
         })))
@@ -26420,7 +26431,7 @@ try {
   window.$RefreshSig$ = prevRefreshSig;
 }
 
-},{"react":"3b2NM","axios":"7rA65","../login-view/login-view":"6M7fu","../movie-card/movie-card":"7v6h3","../movie-view/movie-view":"3xBbr","../registration-view/registration-view":"7gvH2","./main-view.scss":"3X8QW","@parcel/transformer-js/lib/esmodule-helpers.js":"54Ghd","../../../../../../AppData/Roaming/nvm/v14.17.5/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"38HIh","react-bootstrap/Row":"3fzwD"}],"7rA65":[function(require,module,exports) {
+},{"react":"3b2NM","axios":"7rA65","../login-view/login-view":"6M7fu","../movie-card/movie-card":"7v6h3","../movie-view/movie-view":"3xBbr","../registration-view/registration-view":"7gvH2","./main-view.scss":"3X8QW","@parcel/transformer-js/lib/esmodule-helpers.js":"54Ghd","../../../../../../AppData/Roaming/nvm/v14.17.5/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"38HIh","react-bootstrap/Row":"3fzwD","react-bootstrap/Col":"2D0r8"}],"7rA65":[function(require,module,exports) {
 module.exports = require('./lib/axios');
 },{"./lib/axios":"4qfhW"}],"4qfhW":[function(require,module,exports) {
 'use strict';
@@ -31498,6 +31509,87 @@ Row.displayName = 'Row';
 var _default = Row;
 exports.default = _default;
 module.exports = exports.default;
+},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","classnames":"5aJRc","react":"3b2NM","./ThemeProvider":"4rz1S","react/jsx-runtime":"7jBZW"}],"2D0r8":[function(require,module,exports) {
+"use strict";
+
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
+exports.__esModule = true;
+exports.useCol = useCol;
+exports.default = void 0;
+
+var _classnames = _interopRequireDefault(require("classnames"));
+
+var React = _interopRequireWildcard(require("react"));
+
+var _ThemeProvider = require("./ThemeProvider");
+
+var _jsxRuntime = require("react/jsx-runtime");
+
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+const DEVICE_SIZES = ['xxl', 'xl', 'lg', 'md', 'sm', 'xs'];
+
+function useCol({
+  as,
+  bsPrefix,
+  className,
+  ...props
+}) {
+  bsPrefix = (0, _ThemeProvider.useBootstrapPrefix)(bsPrefix, 'col');
+  const spans = [];
+  const classes = [];
+  DEVICE_SIZES.forEach(brkPoint => {
+    const propValue = props[brkPoint];
+    delete props[brkPoint];
+    let span;
+    let offset;
+    let order;
+
+    if (typeof propValue === 'object' && propValue != null) {
+      ({
+        span = true,
+        offset,
+        order
+      } = propValue);
+    } else {
+      span = propValue;
+    }
+
+    const infix = brkPoint !== 'xs' ? `-${brkPoint}` : '';
+    if (span) spans.push(span === true ? `${bsPrefix}${infix}` : `${bsPrefix}${infix}-${span}`);
+    if (order != null) classes.push(`order${infix}-${order}`);
+    if (offset != null) classes.push(`offset${infix}-${offset}`);
+  });
+  return [{ ...props,
+    className: (0, _classnames.default)(className, ...classes, ...spans)
+  }, {
+    as,
+    bsPrefix,
+    spans
+  }];
+}
+
+const Col = /*#__PURE__*/React.forwardRef( // Need to define the default "as" during prop destructuring to be compatible with styled-components github.com/react-bootstrap/react-bootstrap/issues/3595
+(props, ref) => {
+  const [{
+    className,
+    ...colProps
+  }, {
+    as: Component = 'div',
+    bsPrefix,
+    spans
+  }] = useCol(props);
+  return /*#__PURE__*/(0, _jsxRuntime.jsx)(Component, { ...colProps,
+    ref: ref,
+    className: (0, _classnames.default)(className, !spans.length && bsPrefix)
+  });
+});
+Col.displayName = 'Col';
+var _default = Col;
+exports.default = _default;
 },{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","classnames":"5aJRc","react":"3b2NM","./ThemeProvider":"4rz1S","react/jsx-runtime":"7jBZW"}],"5iJih":[function() {},{}],"3Mt3t":[function(require,module,exports) {
 "use strict";
 
