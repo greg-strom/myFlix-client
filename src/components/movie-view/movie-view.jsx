@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import Button from 'react-bootstrap/Button';
 
 import './movie-view.scss';
 
@@ -26,7 +27,7 @@ export class MovieView extends React.Component {
               <span className="label">Description: </span>
               <span className="value">{movie.Description}</span>
             </div>
-            <button onClick={() => { onBackClick(null); }}>Back</button>
+            <Button variant="primary" type="submit" onClick={() => { onBackClick(null); }}>Back</Button>
           </div>
          </Col>
         </Row>
