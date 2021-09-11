@@ -28438,6 +28438,7 @@ try {
           columnNumber: 9
         }
       }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapFormDefault.default.Label, {
+        className: "form-label",
         __self: this,
         __source: {
           fileName: _jsxFileName,
@@ -28463,6 +28464,7 @@ try {
           columnNumber: 9
         }
       }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapFormDefault.default.Label, {
+        className: "form-label",
         __self: this,
         __source: {
           fileName: _jsxFileName,
@@ -45549,6 +45551,7 @@ try {
           columnNumber: 9
         }
       }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapFormDefault.default.Label, {
+        className: "form-label",
         __self: this,
         __source: {
           fileName: _jsxFileName,
@@ -45574,6 +45577,7 @@ try {
           columnNumber: 9
         }
       }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapFormDefault.default.Label, {
+        className: "form-label",
         __self: this,
         __source: {
           fileName: _jsxFileName,
@@ -45599,6 +45603,7 @@ try {
           columnNumber: 9
         }
       }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapFormDefault.default.Label, {
+        className: "form-label",
         __self: this,
         __source: {
           fileName: _jsxFileName,
@@ -45624,6 +45629,7 @@ try {
           columnNumber: 9
         }
       }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapFormDefault.default.Label, {
+        className: "form-label",
         __self: this,
         __source: {
           fileName: _jsxFileName,
