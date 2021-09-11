@@ -32206,83 +32206,103 @@ try {
   var _reactDefault = _parcelHelpers.interopDefault(_react);
   var _propTypes = require('prop-types');
   var _propTypesDefault = _parcelHelpers.interopDefault(_propTypes);
+  var _reactBootstrapRow = require('react-bootstrap/Row');
+  var _reactBootstrapRowDefault = _parcelHelpers.interopDefault(_reactBootstrapRow);
+  var _reactBootstrapCol = require('react-bootstrap/Col');
+  var _reactBootstrapColDefault = _parcelHelpers.interopDefault(_reactBootstrapCol);
   require('./movie-view.scss');
   var _jsxFileName = "C:\\Users\\gbstr\\Documents\\GitHub\\myFlix-client\\src\\components\\movie-view\\movie-view.jsx";
   class MovieView extends _reactDefault.default.Component {
     render() {
       const {movie, onBackClick} = this.props;
       return (
-        /*#__PURE__*/_reactDefault.default.createElement("div", {
+        /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapRowDefault.default, {
+          className: "justify-content-md-center",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 15,
+            columnNumber: 7
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapColDefault.default, {
+          md: 8,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 16,
+            columnNumber: 9
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("div", {
           className: "movie-view",
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 12,
-            columnNumber: 9
+            lineNumber: 17,
+            columnNumber: 11
           }
         }, /*#__PURE__*/_reactDefault.default.createElement("div", {
           className: "movie-poster",
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 13,
-            columnNumber: 11
+            lineNumber: 18,
+            columnNumber: 13
           }
         }, /*#__PURE__*/_reactDefault.default.createElement("img", {
           src: movie.ImagePath,
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 14,
-            columnNumber: 13
+            lineNumber: 19,
+            columnNumber: 15
           }
         })), /*#__PURE__*/_reactDefault.default.createElement("div", {
           className: "movie-title",
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 16,
-            columnNumber: 11
+            lineNumber: 21,
+            columnNumber: 13
           }
         }, /*#__PURE__*/_reactDefault.default.createElement("span", {
           className: "label",
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 17,
-            columnNumber: 13
+            lineNumber: 22,
+            columnNumber: 15
           }
         }, "Title: "), /*#__PURE__*/_reactDefault.default.createElement("span", {
           className: "value",
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 18,
-            columnNumber: 13
+            lineNumber: 23,
+            columnNumber: 15
           }
         }, movie.Title)), /*#__PURE__*/_reactDefault.default.createElement("div", {
           className: "movie-description",
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 20,
-            columnNumber: 11
+            lineNumber: 25,
+            columnNumber: 13
           }
         }, /*#__PURE__*/_reactDefault.default.createElement("span", {
           className: "label",
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 21,
-            columnNumber: 13
+            lineNumber: 26,
+            columnNumber: 15
           }
         }, "Description: "), /*#__PURE__*/_reactDefault.default.createElement("span", {
           className: "value",
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 22,
-            columnNumber: 13
+            lineNumber: 27,
+            columnNumber: 15
           }
         }, movie.Description)), /*#__PURE__*/_reactDefault.default.createElement("button", {
           onClick: () => {
@@ -32291,10 +32311,10 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 24,
-            columnNumber: 11
+            lineNumber: 29,
+            columnNumber: 13
           }
-        }, "Back"))
+        }, "Back"))))
       );
     }
   }
@@ -32312,7 +32332,7 @@ try {
   window.$RefreshSig$ = prevRefreshSig;
 }
 
-},{"react":"3b2NM","./movie-view.scss":"4iZ2Z","@parcel/transformer-js/lib/esmodule-helpers.js":"54Ghd","../../../../../../AppData/Roaming/nvm/v14.17.5/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"38HIh","prop-types":"4dfy5"}],"4iZ2Z":[function() {},{}],"7gvH2":[function(require,module,exports) {
+},{"react":"3b2NM","./movie-view.scss":"4iZ2Z","@parcel/transformer-js/lib/esmodule-helpers.js":"54Ghd","../../../../../../AppData/Roaming/nvm/v14.17.5/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"38HIh","prop-types":"4dfy5","react-bootstrap/Row":"3fzwD","react-bootstrap/Col":"2D0r8"}],"4iZ2Z":[function() {},{}],"7gvH2":[function(require,module,exports) {
 var helpers = require("../../../../../../AppData/Roaming/nvm/v14.17.5/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
