@@ -28402,27 +28402,43 @@ try {
       props.onLoggedIn(username);
     };
     return (
-      /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapFormDefault.default, {
+      /*#__PURE__*/_reactDefault.default.createElement(Row, {
+        className: "justify-content-md-center",
         __self: this,
         __source: {
           fileName: _jsxFileName,
           lineNumber: 21,
           columnNumber: 5
         }
-      }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapFormDefault.default.Group, {
-        controlId: "formUsername",
+      }, /*#__PURE__*/_reactDefault.default.createElement(Col, {
+        md: 8,
         __self: this,
         __source: {
           fileName: _jsxFileName,
           lineNumber: 22,
           columnNumber: 7
         }
-      }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapFormDefault.default.Label, {
+      }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapFormDefault.default, {
         __self: this,
         __source: {
           fileName: _jsxFileName,
           lineNumber: 23,
           columnNumber: 9
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapFormDefault.default.Group, {
+        controlId: "formUsername",
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 24,
+          columnNumber: 9
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapFormDefault.default.Label, {
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 25,
+          columnNumber: 13
         }
       }, "Username:"), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapFormDefault.default.Control, {
         type: "text",
@@ -28431,23 +28447,23 @@ try {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 24,
-          columnNumber: 9
+          lineNumber: 26,
+          columnNumber: 13
         }
       })), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapFormDefault.default.Group, {
         controlId: "formPassword",
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 26,
-          columnNumber: 7
+          lineNumber: 28,
+          columnNumber: 9
         }
       }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapFormDefault.default.Label, {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 27,
-          columnNumber: 9
+          lineNumber: 29,
+          columnNumber: 13
         }
       }, "Password:"), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapFormDefault.default.Control, {
         type: "password",
@@ -28456,8 +28472,8 @@ try {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 28,
-          columnNumber: 9
+          lineNumber: 30,
+          columnNumber: 13
         }
       })), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapButtonDefault.default, {
         variant: "primary",
@@ -28466,10 +28482,10 @@ try {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 30,
-          columnNumber: 7
+          lineNumber: 32,
+          columnNumber: 9
         }
-      }, "Submit"))
+      }, "Submit"))))
     );
   }
   _s(LoginView, "9FY2cPL9VBDmuhjwpF2ik6flsHs=");
