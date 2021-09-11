@@ -5,13 +5,14 @@ import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 
 import './movie-view.scss';
+import { Card } from 'react-bootstrap';
 
 export class MovieView extends React.Component {
     
   render() {
 
     const { movie, onBackClick } = this.props;
-
+/*
     return (
       <Row className="justify-content-md-center">
         <Col md={8}>
@@ -29,9 +30,24 @@ export class MovieView extends React.Component {
             </div>
             <Button variant="primary" type="submit" onClick={() => { onBackClick(null); }}>Back</Button>
           </div>
-         </Col>
-        </Row>
-      );
+        </Col>
+      </Row>
+    );
+*/
+    return (
+      <Row className="justify-content-md-center">
+        <Col md={8}>
+          <Card className="movie-view">
+            <Card.Img variant="top" className="movie-poster" src={movie.ImagePath} />
+            <Card.Body>
+            <Card.Title className="movie-title">{movie.Title}</Card.Title>
+            <Card.Text className="movie-description">{movie.Description}</Card.Text>
+            <Button variant="primary" type="submit" onClick={() => { onBackClick(null); }}>Back</Button>
+            </Card.Body>
+          </Card>
+        </Col>
+      </Row>
+    );
   }
 }
 
