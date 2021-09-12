@@ -1,10 +1,45 @@
-
-.movie-card {
-  cursor: pointer;
+.form-label {
+  color: white;
 }
-
-
-
+.movie-card {
+  box-sizing: border-box;
+  display: block;
+  text-align: center;
+  width: 90%;
+  margin: auto;
+  margin-top: 30px;
+  padding: 1.5%;
+  background-color: #C5CBE3 !important;
+  opacity: 80%;
+  border-radius: 20px;
+}
+.movie-view {
+  box-sizing: border-box;
+  display: block;
+  text-align: center;
+  width: 90%;
+  margin: auto;
+  margin-top: 30px;
+  padding: 1.5%;
+  background-color: #C5CBE3 !important;
+  opacity: 80%;
+  border-radius: 20px;
+}
+.form-label {
+  color: white;
+}
+/*
+body {
+    background-color: #F47174 !important;
+}
+*/
+body {
+  background-image: url("curtain-1275200.84d51ec5.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: #F47174;
+}
 .my-flix {
   color: steelblue;
 }
