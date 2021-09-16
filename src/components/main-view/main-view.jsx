@@ -1,3 +1,4 @@
+import config from '../../config';
 import React from 'react';
 import axios from 'axios';
 import Row from 'react-bootstrap/Row';
@@ -25,7 +26,7 @@ class MainView extends React.Component {
 
   //this code fetches movie data from my heroku app and puts it in the movies array
   componentDidMount(){
-    axios.get('https://cfmovieapp.herokuapp.com/movies')
+    axios.get(`${config.API_URL}/movies`)
       .then(response => {
         this.setState({
           movies: response.data
