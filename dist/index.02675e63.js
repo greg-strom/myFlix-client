@@ -26286,6 +26286,8 @@ try {
   var _reactBootstrapRowDefault = _parcelHelpers.interopDefault(_reactBootstrapRow);
   var _reactBootstrapCol = require('react-bootstrap/Col');
   var _reactBootstrapColDefault = _parcelHelpers.interopDefault(_reactBootstrapCol);
+  var _reactBootstrapButton = require('react-bootstrap/Button');
+  var _reactBootstrapButtonDefault = _parcelHelpers.interopDefault(_reactBootstrapButton);
   var _loginViewLoginView = require('../login-view/login-view');
   var _movieCardMovieCard = require('../movie-card/movie-card');
   var _movieViewMovieView = require('../movie-view/movie-view');
@@ -26305,13 +26307,13 @@ try {
     }
     /*this code fetches movie data from my heroku app and puts it in the movies array*/
     componentDidMount() {
-      _axiosDefault.default.get(`${_configDefault.default.API_URL}/movies`).then(response => {
+      let accessToken = localStorage.getItem('token');
+      if (accessToken !== null) {
         this.setState({
-          movies: response.data
+          user: localStorage.getItem('user')
         });
-      }).catch(error => {
-        console.log(error);
-      });
+        this.getMovies(accessToken);
+      }
     }
     /*this function is triggered when a movie is clicked.
     It changes the state of the selectedMovie propery to the clicked movie*/
@@ -26349,6 +26351,13 @@ try {
         console.log(error);
       });
     }
+    onLoggedOut() {
+      localStorage.removeItem('token');
+      localStorage.removeItem('user');
+      this.setState({
+        user: null
+      });
+    }
     render() {
       const {movies, selectedMovie, user, registered} = this.state;
       /*This code renders the RegistrationView if the user is not registered.
@@ -26359,7 +26368,7 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 86,
+            lineNumber: 93,
             columnNumber: 29
           }
         })
@@ -26372,7 +26381,7 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 90,
+            lineNumber: 97,
             columnNumber: 23
           }
         })
@@ -26383,7 +26392,7 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 92,
+            lineNumber: 99,
             columnNumber: 37
           }
         })
@@ -26393,21 +26402,31 @@ try {
       if there is not a movie that has been selected, then all movies are displayed
       using MovieCard.*/
       return (
-        /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapRowDefault.default, {
+        /*#__PURE__*/_reactDefault.default.createElement(_reactDefault.default.Fragment, null, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapButtonDefault.default, {
+          onClick: () => {
+            this.onLoggedOut();
+          },
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 107,
+            columnNumber: 9
+          }
+        }, "Logout"), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapRowDefault.default, {
           className: "justify-content-md-center",
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 99,
-            columnNumber: 7
+            lineNumber: 108,
+            columnNumber: 9
           }
         }, selectedMovie ? /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapColDefault.default, {
           md: 8,
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 102,
-            columnNumber: 13
+            lineNumber: 111,
+            columnNumber: 15
           }
         }, /*#__PURE__*/_reactDefault.default.createElement(_movieViewMovieView.MovieView, {
           movie: selectedMovie,
@@ -26417,16 +26436,16 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 103,
-            columnNumber: 15
+            lineNumber: 112,
+            columnNumber: 17
           }
         })) : movies.map(movie => /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapColDefault.default, {
           md: 3,
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 107,
-            columnNumber: 13
+            lineNumber: 116,
+            columnNumber: 17
           }
         }, /*#__PURE__*/_reactDefault.default.createElement(_movieCardMovieCard.MovieCard, {
           key: movie._id,
@@ -26437,10 +26456,10 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 108,
-            columnNumber: 15
+            lineNumber: 117,
+            columnNumber: 19
           }
-        }))))
+        })))))
       );
     }
   }
@@ -26451,7 +26470,7 @@ try {
   window.$RefreshSig$ = prevRefreshSig;
 }
 
-},{"react":"3b2NM","axios":"7rA65","react-bootstrap/Row":"3fzwD","react-bootstrap/Col":"2D0r8","../login-view/login-view":"6M7fu","../movie-card/movie-card":"7v6h3","../movie-view/movie-view":"3xBbr","../registration-view/registration-view":"7gvH2","./main-view.scss":"3X8QW","@parcel/transformer-js/lib/esmodule-helpers.js":"54Ghd","../../../../../../AppData/Roaming/nvm/v14.17.5/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"38HIh","../../config":"5yJJr"}],"7rA65":[function(require,module,exports) {
+},{"react":"3b2NM","axios":"7rA65","react-bootstrap/Row":"3fzwD","react-bootstrap/Col":"2D0r8","../login-view/login-view":"6M7fu","../movie-card/movie-card":"7v6h3","../movie-view/movie-view":"3xBbr","../registration-view/registration-view":"7gvH2","./main-view.scss":"3X8QW","@parcel/transformer-js/lib/esmodule-helpers.js":"54Ghd","../../../../../../AppData/Roaming/nvm/v14.17.5/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"38HIh","../../config":"5yJJr","react-bootstrap/Button":"1ru0l"}],"7rA65":[function(require,module,exports) {
 module.exports = require('./lib/axios');
 },{"./lib/axios":"4qfhW"}],"4qfhW":[function(require,module,exports) {
 'use strict';
