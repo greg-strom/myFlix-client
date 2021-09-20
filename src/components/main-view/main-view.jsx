@@ -1,6 +1,8 @@
 import config from '../../config';
 import React from 'react';
 import axios from 'axios';
+import { BrowserRouter as Router, Route } from "react-router-dom";
+
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
@@ -90,7 +92,7 @@ class MainView extends React.Component {
 
     /* This code renders the RegistrationView if the user is not registered.
     Otherwise, we move on. */
-    if (!registered) return <RegistrationView onRegistration={registered => this.onRegistration(registered)} />;
+    //if (!registered) return <RegistrationView onRegistration={registered => this.onRegistration(registered)} />;
 
     /* This code renders the LoginView if the user is not logged in.
     Otherwise, we move on. */
