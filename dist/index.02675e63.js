@@ -26502,6 +26502,7 @@ try {
                 }
               }, /*#__PURE__*/_reactDefault.default.createElement(DirectorView, {
                 director: movies.find(m => m.Director.Name === match.params.name).Director,
+                onBackClick: () => history.back(),
                 __self: this,
                 __source: {
                   fileName: _jsxFileName,
@@ -26542,6 +26543,7 @@ try {
                 }
               }, /*#__PURE__*/_reactDefault.default.createElement(GenreView, {
                 genre: movies.find(m => m.Genre.Name === match.params.name).Genre,
+                onBackClick: () => history.back(),
                 __self: this,
                 __source: {
                   fileName: _jsxFileName,
