@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from "react-router-dom";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
@@ -40,9 +41,15 @@ export class MovieView extends React.Component {
           <Card className="movie-view">
             <Card.Img variant="top" className="movie-poster" src={movie.ImagePath} />
             <Card.Body>
-            <Card.Title className="movie-title">{movie.Title}</Card.Title>
-            <Card.Text className="movie-description">{movie.Description}</Card.Text>
-            <Button variant="primary" type="submit" onClick={() => { onBackClick(null); }}>Back</Button>
+              <Card.Title className="movie-title">{movie.Title}</Card.Title>
+              <Card.Text className="movie-description">{movie.Description}</Card.Text>
+              <Link to={`/directors/${movie.Director.Name}`}>
+                <Button variant="link">Director</Button>
+              </Link>
+              <Link to={`/genres/${movie.Genre.Name}`}>
+                <Button variant="link">Genre</Button>
+              </Link>
+              <Button variant="primary" type="submit" onClick={() => { onBackClick(null); }}>Back</Button>
             </Card.Body>
           </Card>
         </Col>

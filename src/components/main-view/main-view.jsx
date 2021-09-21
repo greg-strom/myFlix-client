@@ -108,7 +108,7 @@ class MainView extends React.Component {
       <>
         <Button onClick={() => { this.onLoggedOut() }}>Logout</Button>
         {/*The following code is kept here just in case the router code doesn't work.*/}
-        {/* <Row className="justify-content-md-center">
+         {/*<Row className="justify-content-md-center">
           {selectedMovie
             ? (
               <Col md={8}>
@@ -133,13 +133,19 @@ class MainView extends React.Component {
             }} />
             <Route path="/movies/:movieId" render={({ match }) => {
               return <Col md={8}>
-                <MovieView movie={movies.find(m => m._id === match.params.movieId)} />
+                <MovieView movie={movies.find(m => m._id === match.params.movieId)} onBackClick={() => history.back()} />
               </Col>
             }} />
             <Route path="/directors/:name" render={({ match }) => {
               if (movies.length === 0) return <div className="main-view" />;
               return <Col md={8}>
                 <DirectorView director={movies.find(m => m.Director.Name === match.params.name).Director} />
+              </Col>
+            }} />
+            <Route path="/genres/:genre" render={({ match }) => {
+              if (movies.length === 0) return <div className="main-view" />;
+              return <Col md={8}>
+                <GenreView genre={movies.find(m => m.Genre.Name === match.params.name).Genre} />
               </Col>
             }} />
           </Row>
