@@ -54,6 +54,5 @@ LoginView.propTypes = {
   register: PropTypes.shape({
     username: PropTypes.string.isRequired,
     password: PropTypes.string.isRequired
-  }),
-  onRegistration: PropTypes.func.isRequired
+  })
 };

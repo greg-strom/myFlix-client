@@ -48,11 +48,11 @@ class MainView extends React.Component {
     });
   }
 
-  onRegistration(registered) {
-    this.setState({
-      registered
-    });
-  }
+//  onRegistration(registered) {
+//    this.setState({
+//      registered
+//    });
+//  }
 
   /*When a user logs in, this function changes the user property to that user */
   onLoggedIn(authData) {
@@ -98,7 +98,7 @@ class MainView extends React.Component {
 
     /* This code renders the LoginView if the user is not logged in.
     Otherwise, we move on. */
-    if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
+    //if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
 
     if (movies.length === 0) return <div className="main-view" />;
 
@@ -127,12 +127,27 @@ class MainView extends React.Component {
         <Router>
           <Row className="main-view justify-content-md-center">
             <Route exact path="/" render={() => {
+              if (!user) return <Col>
+                <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
+              </Col>
               return movies.map(m => (
                 <Col md={3} key={m._id}>
                   <MovieCard movie={m} />
                 </Col>
               ))
             }} />
+            <Route path="/register" render={() => {
+              return <Col>
+                <RegistrationView />
+              </Col>
+            }} />
+            {/* <Route exact path="/" render={() => {
+              return movies.map(m => (
+                <Col md={3} key={m._id}>
+                  <MovieCard movie={m} />
+                </Col>
+              ))
+            }} /> */}
             <Route path="/movies/:movieId" render={({ match, history }) => {
               return <Col md={8}>
                 <MovieView movie={movies.find(m => m._id === match.params.movieId)} onBackClick={() => history.goBack()} />

@@ -1,5 +1,7 @@
+import config from '../../config';
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import axios from 'axios';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
@@ -15,10 +17,20 @@ export function RegistrationView(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(username, password, email, birthdate);
-    /* Send a request to the server for authentication */
-    /* then call props.onRegistration(username) */
-    props.onRegistration(username);
+    axios.post(`${config.API_URL}/users`, {
+      Username: username,
+      Password: password,
+      Email: email,
+      Birthdate: birthdate
+    })
+    .then(response => {
+      const data = response.data;
+      console.log(data);
+      window.open('/', '_self'); // Note: '_self' in this context ensures that the page will open in the current tab
+    })
+    .catch(e => {
+      console.log('error registering the user')
+    });
   };
 
   return (
@@ -55,6 +67,6 @@ RegistrationView.propTypes = {
     password: PropTypes.string.isRequired,
     email: PropTypes.string.isRequired,
     birthdate: PropTypes.string.isRequired
-  }),
-  onRegistration: PropTypes.func.isRequired
+  })//,
+  //onRegistration: PropTypes.func.isRequired
 };
