@@ -1,7 +1,7 @@
 import config from '../../config';
 import React from 'react';
 import axios from 'axios';
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -23,9 +23,9 @@ class MainView extends React.Component {
     //initial state for all of these parameters set to null
     this.state = {
       movies: [],
-      selectedMovie: null,
+      //selectedMovie: null,
       user: null,
-      registered: null
+      //registered: null
     }
   }
 
@@ -40,21 +40,15 @@ class MainView extends React.Component {
     }
   }
 
-  /*this function is triggered when a movie is clicked.
+  /*this function is triggered when a movie is clicked!!
   It changes the state of the selectedMovie propery to the clicked movie */
-  setSelectedMovie(newSelectedMovie) {
+  /*setSelectedMovie(newSelectedMovie) {
     this.setState({
       selectedMovie: newSelectedMovie
     });
-  }
+  }*/
 
-//  onRegistration(registered) {
-//    this.setState({
-//      registered
-//    });
-//  }
-
-  /*When a user logs in, this function changes the user property to that user */
+  /*When a user logs in, this function changes the user property to that user!! */
   onLoggedIn(authData) {
     console.log(authData)
     this.setState({
@@ -62,7 +56,7 @@ class MainView extends React.Component {
     });
 
     localStorage.setItem('token', authData.token);
-      localStorage.setItem('user', authData.user.Username);
+    localStorage.setItem('user', authData.user.Username);
     this.getMovies(authData.token);
   }
 
@@ -90,46 +84,24 @@ class MainView extends React.Component {
   }
 
   render() {
-    const { movies, selectedMovie, user, registered } = this.state;
+    const { movies, user } = this.state;
 
-    /* This code renders the RegistrationView if the user is not registered.
-    Otherwise, we move on. */
-    //if (!registered) return <RegistrationView onRegistration={registered => this.onRegistration(registered)} />;
+    // if (!user) return (<Row className="main-view justify-content-md-center"> <Col>
+    //  <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
+    // </Col> </Row>)
 
-    /* This code renders the LoginView if the user is not logged in.
-    Otherwise, we move on. */
-    //if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
+    // if (movies.length === 0) return <div className="main-view">Loading!</div>;
 
-    if (movies.length === 0) return <div className="main-view" />;
-
-    /* This code checks whether there is a movie that has been selected.
-    If there is, then this displays that movie's details using MovieView;
-    if there is not a movie that has been selected, then all movies are displayed
-    using MovieCard. */
     return (
       <>
-        <Button onClick={() => { this.onLoggedOut() }}>Logout</Button>
-        {/*The following code is kept here just in case the router code doesn't work.*/}
-         {/*<Row className="justify-content-md-center">
-          {selectedMovie
-            ? (
-              <Col md={8}>
-                <MovieView movie={selectedMovie} onBackClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie); }}/>
-              </Col>
-            )
-            : movies.map(movie => (
-                <Col md={3}>
-                  <MovieCard key={movie._id} movie={movie} onMovieClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie) }}/>
-                </Col>
-            ))
-          }
-        </Row> */}
+        {user && <Button onClick={() => { this.onLoggedOut() }}>Logout</Button>}
         <Router>
           <Row className="main-view justify-content-md-center">
             <Route exact path="/" render={() => {
               if (!user) return <Col>
                 <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
               </Col>
+              if (movies.length === 0) return <div className="main-view" />;
               return movies.map(m => (
                 <Col md={3} key={m._id}>
                   <MovieCard movie={m} />
@@ -137,29 +109,33 @@ class MainView extends React.Component {
               ))
             }} />
             <Route path="/register" render={() => {
+              if (user) return <Redirect to="/" />
               return <Col>
                 <RegistrationView />
               </Col>
             }} />
-            {/* <Route exact path="/" render={() => {
-              return movies.map(m => (
-                <Col md={3} key={m._id}>
-                  <MovieCard movie={m} />
-                </Col>
-              ))
-            }} /> */}
             <Route path="/movies/:movieId" render={({ match, history }) => {
+              if (!user) return <Col>
+                <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
+              </Col>
+              if (movies.length === 0) return <div className="main-view" />;
               return <Col md={8}>
                 <MovieView movie={movies.find(m => m._id === match.params.movieId)} onBackClick={() => history.goBack()} />
               </Col>
             }} />
             <Route path="/directors/:name" render={({ match, history }) => {
+              if (!user) return <Col>
+                <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
+              </Col>
               if (movies.length === 0) return <div className="main-view" />;
               return <Col md={8}>
                 <DirectorView director={movies.find(m => m.Director.Name === match.params.name).Director} onBackClick={() => history.goBack()} />
               </Col>
             }} />
             <Route path="/genres/:name" render={({ match, history }) => {
+              if (!user) return <Col>
+                <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
+              </Col>
               if (movies.length === 0) return <div className="main-view" />;
               return <Col md={8}>
                 <GenreView genre={movies.find(m => m.Genre.Name === match.params.name).Genre} onBackClick={() => history.goBack()} />

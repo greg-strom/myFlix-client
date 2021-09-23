@@ -26,7 +26,7 @@ export function RegistrationView(props) {
     .then(response => {
       const data = response.data;
       console.log(data);
-      window.open('/', '_self'); // Note: '_self' in this context ensures that the page will open in the current tab
+      window.open('/', '_self'); // Note: '_self' in this context ensures that the page will open in the current tab. Let's try this again!
     })
     .catch(e => {
       console.log('error registering the user')
@@ -67,6 +67,5 @@ RegistrationView.propTypes = {
     password: PropTypes.string.isRequired,
     email: PropTypes.string.isRequired,
     birthdate: PropTypes.string.isRequired
-  })//,
-  //onRegistration: PropTypes.func.isRequired
+  })
 };
