@@ -13,6 +13,7 @@ import { MovieView } from '../movie-view/movie-view';
 import { DirectorView } from '../director-view/director-view';
 import { GenreView } from '../genre-view/genre-view';
 import { RegistrationView } from '../registration-view/registration-view';
+import { ProfileView } from '../profile-view/profile-view';
 
 import './main-view.scss';
 
@@ -95,6 +96,7 @@ class MainView extends React.Component {
     return (
       <>
         {user && <Button onClick={() => { this.onLoggedOut() }}>Logout</Button>}
+        {user && <Button /*as={Link} to={`/${this.state.user}/profile`}*/>Profile</Button>}
         <Router>
           <Row className="main-view justify-content-md-center">
             <Route exact path="/" render={() => {
@@ -139,6 +141,15 @@ class MainView extends React.Component {
               if (movies.length === 0) return <div className="main-view" />;
               return <Col md={8}>
                 <GenreView genre={movies.find(m => m.Genre.Name === match.params.name).Genre} onBackClick={() => history.goBack()} />
+              </Col>
+            }} />
+            <Route path="/profile" render={({ match, history }) => {
+              if (!user) return <Col>
+                <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
+              </Col>
+              if (movies.length === 0) return <div className="main-view" />;
+              return <Col md={8}>
+                <ProfileView user={user} movies={movies} onBackClick={() => history.goBack()} />
               </Col>
             }} />
           </Row>
