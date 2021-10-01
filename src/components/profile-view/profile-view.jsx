@@ -58,6 +58,31 @@ export class ProfileView extends React.Component {
       })
   }
 
+  handleUnregister() {
+    const answer = window.confirm("Are you sure? If you proceed, your account and information will be permanently deleted.");
+    if (answer) {
+      const token = localStorage.getItem("token");
+      const user = localStorage.getItem("user");
+
+      axios.delete(`${config.API_URL}/users/${user}`,
+        { headers: { Authorization: `Bearer ${token}` } }
+      )
+      .then(() => {
+        alert(user + " has been deleted.");
+        localStorage.removeItem("user");
+        localStorage.removeItem("token");
+        window.location.pathname = "/";
+      })
+      .catch(function (error) {
+        console.log(error);
+      })
+
+    } else {
+      console.log("That's one happy customer!");
+    };
+  }
+
+
   render() {
     const { movies, user } = this.props;
 

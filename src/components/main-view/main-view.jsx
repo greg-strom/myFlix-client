@@ -2,6 +2,7 @@ import config from '../../config';
 import React from 'react';
 import axios from 'axios';
 import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -95,9 +96,9 @@ class MainView extends React.Component {
 
     return (
       <>
-        {user && <Button onClick={() => { this.onLoggedOut() }}>Logout</Button>}
-        {user && <Button /*as={Link} to={`/${this.state.user}/profile`}*/>Profile</Button>}
         <Router>
+        {user && <Button onClick={() => { this.onLoggedOut() }}>Logout</Button>}
+        {user && <Button as={Link} to={`/profile`}>Profile</Button>}
           <Row className="main-view justify-content-md-center">
             <Route exact path="/" render={() => {
               if (!user) return <Col>
