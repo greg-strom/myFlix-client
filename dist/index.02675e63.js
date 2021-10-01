@@ -49480,7 +49480,7 @@ try {
           console.log(error);
         });
       } else {
-        console.log("That's one happy customer!");
+        console.log("Thanks for staying with us! You rock!");
       }
       ;
     }
@@ -49492,12 +49492,55 @@ try {
       });
       console.log(favoritesList);
       return (
-        /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapRowDefault.default, {
+        /*#__PURE__*/_reactDefault.default.createElement(_reactDefault.default.Fragment, null, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapRowDefault.default, {
+          className: "text-white",
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 97,
-            columnNumber: 7
+            lineNumber: 98,
+            columnNumber: 9
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapColDefault.default, {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 99,
+            columnNumber: 11
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("h1", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 100,
+            columnNumber: 13
+          }
+        }, "Username: ", `${this.props.user}`), /*#__PURE__*/_reactDefault.default.createElement("p", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 101,
+            columnNumber: 13
+          }
+        }, "Email: ", `${this.state.Email}`), /*#__PURE__*/_reactDefault.default.createElement("p", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 102,
+            columnNumber: 13
+          }
+        }, "Birthday: ", `${this.state.Birthday}`), /*#__PURE__*/_reactDefault.default.createElement("h1", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 103,
+            columnNumber: 13
+          }
+        }, "Your Favorites"))), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapRowDefault.default, {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 106,
+            columnNumber: 9
           }
         }, favoritesList.map(movie => {
           return (
@@ -49507,24 +49550,24 @@ try {
               __self: this,
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 100,
-                columnNumber: 13
+                lineNumber: 109,
+                columnNumber: 15
               }
             }, /*#__PURE__*/_reactDefault.default.createElement("div", {
               key: movie._id,
               __self: this,
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 101,
-                columnNumber: 15
+                lineNumber: 110,
+                columnNumber: 17
               }
             }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrap.Card, {
               className: "movie-card",
               __self: this,
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 102,
-                columnNumber: 17
+                lineNumber: 111,
+                columnNumber: 19
               }
             }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrap.Card.Img, {
               variant: "top",
@@ -49532,57 +49575,84 @@ try {
               __self: this,
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 103,
-                columnNumber: 19
+                lineNumber: 112,
+                columnNumber: 21
               }
             }), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrap.Card.Body, {
               __self: this,
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 104,
-                columnNumber: 19
+                lineNumber: 113,
+                columnNumber: 21
               }
             }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrap.Card.Title, {
               __self: this,
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 105,
-                columnNumber: 21
+                lineNumber: 114,
+                columnNumber: 23
               }
             }, movie.Title), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrap.Card.Text, {
               __self: this,
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 106,
-                columnNumber: 21
+                lineNumber: 115,
+                columnNumber: 23
               }
             }, movie.Description), /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.Link, {
               to: `/movies/${movie._id}`,
               __self: this,
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 107,
-                columnNumber: 21
+                lineNumber: 116,
+                columnNumber: 23
               }
             }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapButtonDefault.default, {
               variant: "link",
               __self: this,
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 108,
-                columnNumber: 23
+                lineNumber: 117,
+                columnNumber: 25
               }
             }, "Open")), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapButtonDefault.default, {
               onClick: () => this.handleRemoveFave(movie),
               __self: this,
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 110,
-                columnNumber: 21
+                lineNumber: 119,
+                columnNumber: 23
               }
             }, "Remove from Favorites")))))
           );
-        }))
+        })), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapRowDefault.default, {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 127,
+            columnNumber: 9
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapColDefault.default, {
+          className: "acc-btns mt-1",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 128,
+            columnNumber: 11
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapButtonDefault.default, {
+          size: "md",
+          variant: "danger",
+          type: "submit",
+          ml: "4",
+          onClick: () => this.handleUnregister(),
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 129,
+            columnNumber: 13
+          }
+        }, "Delete Account"))))
       );
     }
   }

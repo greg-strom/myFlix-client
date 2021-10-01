@@ -78,7 +78,7 @@ export class ProfileView extends React.Component {
       })
 
     } else {
-      console.log("That's one happy customer!");
+      console.log("Thanks for staying with us! You rock!");
     };
   }
 
@@ -94,28 +94,42 @@ export class ProfileView extends React.Component {
     console.log(favoritesList);
 
     return (
-      <Row>
-      {favoritesList.map((movie) => {
-          return (
-            <Col md={4} key={movie._id}>
-              <div key={movie._id}>
-                <Card className='movie-card'>
-                  <Card.Img variant="top" src={movie.ImagePath} />
-                  <Card.Body>
-                    <Card.Title>{movie.Title}</Card.Title>
-                    <Card.Text>{movie.Description}</Card.Text>
-                    <Link to={`/movies/${movie._id}`}>
-                      <Button variant="link">Open</Button>
-                    </Link>
-                    <Button onClick={() => this.handleRemoveFave(movie)}>Remove from Favorites</Button> 
-                  </Card.Body>
-                </Card>
-              </div>
-            </Col>
-          );
-        })}
-
-      </Row>
+      <>
+        <Row  className="text-white">
+          <Col>
+            <h1>Username: {`${this.props.user}`}</h1>
+            <p>Email: {`${this.state.Email}`}</p>
+            <p>Birthday: {`${this.state.Birthday}`}</p>
+            <h1>Your Favorites</h1>
+          </Col>
+        </Row>
+        <Row>
+        {favoritesList.map((movie) => {
+            return (
+              <Col md={4} key={movie._id}>
+                <div key={movie._id}>
+                  <Card className='movie-card'>
+                    <Card.Img variant="top" src={movie.ImagePath} />
+                    <Card.Body>
+                      <Card.Title>{movie.Title}</Card.Title>
+                      <Card.Text>{movie.Description}</Card.Text>
+                      <Link to={`/movies/${movie._id}`}>
+                        <Button variant="link">Open</Button>
+                      </Link>
+                      <Button onClick={() => this.handleRemoveFave(movie)}>Remove from Favorites</Button> 
+                    </Card.Body>
+                  </Card>
+                </div>
+              </Col>
+            );
+          })}
+        </Row>
+        <Row>
+          <Col className="acc-btns mt-1">
+            <Button size="md" variant="danger" type="submit" ml="4" onClick={() => this.handleUnregister()} >Delete Account</Button>
+          </Col>
+        </Row>
+      </>
     );
   }
 };
