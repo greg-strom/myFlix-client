@@ -131,6 +131,9 @@ export class ProfileView extends React.Component {
           <Col className="acc-btns mt-1">
             <Button size="md" variant="danger" type="submit" ml="4" onClick={() => this.handleUnregister()} >Delete Account</Button>
           </Col>
+          <Col>
+            <Button size="md" variant="primary" type="submit" ml="4" onClick={() => { onBackClick(null); }}>Back</Button>
+          </Col>
         </Row>
       </>
     );

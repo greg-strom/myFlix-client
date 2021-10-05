@@ -34246,6 +34246,7 @@ try {
   var _reactBootstrapRowDefault = _parcelHelpers.interopDefault(_reactBootstrapRow);
   var _reactBootstrapCol = require('react-bootstrap/Col');
   var _reactBootstrapColDefault = _parcelHelpers.interopDefault(_reactBootstrapCol);
+  var _reactRouterDom = require("react-router-dom");
   require('./login-view.scss');
   var _jsxFileName = "C:\\Users\\gbstr\\Documents\\GitHub\\myFlix-client\\src\\components\\login-view\\login-view.jsx", _s = $RefreshSig$();
   function LoginView(props) {
@@ -34271,7 +34272,7 @@ try {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 33,
+          lineNumber: 34,
           columnNumber: 5
         }
       }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapColDefault.default, {
@@ -34279,14 +34280,14 @@ try {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 34,
+          lineNumber: 35,
           columnNumber: 7
         }
       }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapFormDefault.default, {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 35,
+          lineNumber: 36,
           columnNumber: 9
         }
       }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapFormDefault.default.Group, {
@@ -34294,7 +34295,7 @@ try {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 36,
+          lineNumber: 37,
           columnNumber: 9
         }
       }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapFormDefault.default.Label, {
@@ -34302,7 +34303,7 @@ try {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 37,
+          lineNumber: 38,
           columnNumber: 13
         }
       }, "Username:"), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapFormDefault.default.Control, {
@@ -34312,7 +34313,7 @@ try {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 38,
+          lineNumber: 39,
           columnNumber: 13
         }
       })), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapFormDefault.default.Group, {
@@ -34320,7 +34321,7 @@ try {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 40,
+          lineNumber: 41,
           columnNumber: 9
         }
       }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapFormDefault.default.Label, {
@@ -34328,7 +34329,7 @@ try {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 41,
+          lineNumber: 42,
           columnNumber: 13
         }
       }, "Password:"), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapFormDefault.default.Control, {
@@ -34338,7 +34339,7 @@ try {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 42,
+          lineNumber: 43,
           columnNumber: 13
         }
       })), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapButtonDefault.default, {
@@ -34348,10 +34349,27 @@ try {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 44,
+          lineNumber: 45,
           columnNumber: 9
         }
-      }, "Submit"))))
+      }, "Submit"), /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.Link, {
+        to: `/register`,
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 48,
+          columnNumber: 9
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapButtonDefault.default, {
+        variant: "primary",
+        type: "submit",
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 49,
+          columnNumber: 11
+        }
+      }, "Register")))))
     );
   }
   _s(LoginView, "9FY2cPL9VBDmuhjwpF2ik6flsHs=");
@@ -34370,7 +34388,7 @@ try {
   window.$RefreshSig$ = prevRefreshSig;
 }
 
-},{"../../config":"5yJJr","react":"3b2NM","prop-types":"4dfy5","axios":"7rA65","react-bootstrap/Form":"6A5ko","react-bootstrap/Button":"1ru0l","react-bootstrap/Row":"3fzwD","react-bootstrap/Col":"2D0r8","./login-view.scss":"3ueKO","@parcel/transformer-js/lib/esmodule-helpers.js":"54Ghd","../../../../../../AppData/Roaming/nvm/v14.17.5/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"38HIh"}],"6A5ko":[function(require,module,exports) {
+},{"../../config":"5yJJr","react":"3b2NM","prop-types":"4dfy5","axios":"7rA65","react-bootstrap/Form":"6A5ko","react-bootstrap/Button":"1ru0l","react-bootstrap/Row":"3fzwD","react-bootstrap/Col":"2D0r8","./login-view.scss":"3ueKO","@parcel/transformer-js/lib/esmodule-helpers.js":"54Ghd","../../../../../../AppData/Roaming/nvm/v14.17.5/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"38HIh","react-router-dom":"1PMSK"}],"6A5ko":[function(require,module,exports) {
 "use strict";
 
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
@@ -49738,7 +49756,28 @@ try {
             lineNumber: 132,
             columnNumber: 13
           }
-        }, "Delete Account"))))
+        }, "Delete Account")), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapColDefault.default, {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 134,
+            columnNumber: 11
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapButtonDefault.default, {
+          size: "md",
+          variant: "primary",
+          type: "submit",
+          ml: "4",
+          onClick: () => {
+            onBackClick(null);
+          },
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 135,
+            columnNumber: 13
+          }
+        }, "Back"))))
       );
     }
   }
