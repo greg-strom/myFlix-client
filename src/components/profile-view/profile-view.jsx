@@ -86,7 +86,7 @@ export class ProfileView extends React.Component {
   render() {
     const { movies, user } = this.props;
 
-    //When a user exists with favorite movies, this makes "favoritesList" into an array with all of the user's favorite movies--
+    //When a user exists with favorite movies,  this makes "favoritesList" into an array with all of the user's favorite movies--
     const favoritesList = movies.filter(m => {
       return this.state.FavoriteMovies.includes(m._id);
     });
