@@ -15,6 +15,7 @@ import { DirectorView } from '../director-view/director-view';
 import { GenreView } from '../genre-view/genre-view';
 import { RegistrationView } from '../registration-view/registration-view';
 import { ProfileView } from '../profile-view/profile-view';
+import { UpdateView } from '../update-view/update-view';
 
 import './main-view.scss';
 
@@ -151,6 +152,15 @@ class MainView extends React.Component {
               if (movies.length === 0) return <div className="main-view" />;
               return <Col md={8}>
                 <ProfileView user={user} movies={movies} onBackClick={() => history.goBack()} />
+              </Col>
+            }} />
+            <Route path="/update/:currentuser" render={({ match, history }) => {
+              if (!user) return <Col>
+                <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
+              </Col>
+              if (movies.length === 0) return <div className="main-view" />;
+              return <Col md={8}>
+                <UpdateView user={user} movies={movies} onBackClick={() => history.goBack()} />
               </Col>
             }} />
           </Row>

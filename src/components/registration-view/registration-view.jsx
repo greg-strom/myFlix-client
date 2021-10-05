@@ -13,7 +13,7 @@ export function RegistrationView(props) {
   const [ username, setUsername ] = useState('');
   const [ password, setPassword ] = useState('');
   const [ email, setEmail ] = useState('');
-  const [ birthdate, setBirthdate ] = useState('');
+  const [ birthday, setBirthday ] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -21,7 +21,7 @@ export function RegistrationView(props) {
       Username: username,
       Password: password,
       Email: email,
-      Birthdate: birthdate
+      Birthday: birthday
     })
     .then(response => {
       const data = response.data;
@@ -49,9 +49,9 @@ export function RegistrationView(props) {
             <Form.Label className="form-label">Email:</Form.Label>
             <Form.Control type="email" value={email} onChange={e => setEmail(e.target.value)} />
         </Form.Group>
-        <Form.Group controlId="formBirthdate">
-            <Form.Label className="form-label">Birthdate:</Form.Label>
-            <Form.Control type="date" value={birthdate} onChange={e => setBirthdate(e.target.value)} />
+        <Form.Group controlId="formBirthday">
+            <Form.Label className="form-label">Birthday:</Form.Label>
+            <Form.Control type="date" value={birthday} onChange={e => setBirthday(e.target.value)} />
         </Form.Group>
 
         <Button variant="primary" type="submit" onClick={handleSubmit}>Register</Button>
@@ -66,6 +66,6 @@ RegistrationView.propTypes = {
     username: PropTypes.string.isRequired,
     password: PropTypes.string.isRequired,
     email: PropTypes.string.isRequired,
-    birthdate: PropTypes.string.isRequired
+    birthday: PropTypes.string.isRequired
   })
 };

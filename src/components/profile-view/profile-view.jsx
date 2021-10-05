@@ -126,6 +126,9 @@ export class ProfileView extends React.Component {
         </Row>
         <Row>
           <Col className="acc-btns mt-1">
+            <Link to={`/update/${this.props.user}`}><Button size="md" variant="warning">Update Your Information</Button></Link>
+          </Col>
+          <Col className="acc-btns mt-1">
             <Button size="md" variant="danger" type="submit" ml="4" onClick={() => this.handleUnregister()} >Delete Account</Button>
           </Col>
         </Row>
