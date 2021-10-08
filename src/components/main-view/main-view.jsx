@@ -23,10 +23,9 @@ import { UpdateView } from '../update-view/update-view';
 // #0
 import { setMovies } from '../../actions/actions';
 
-// we haven't written this one yet
 import MoviesList from '../movies-list/movies-list';
 /* 
-  #1 The rest of components import statements but without the MovieCard's 
+  #1 The rest of components import statements but without the MovieCards 
   because it will be imported and used in the MoviesList component rather
   than in here. 
 */

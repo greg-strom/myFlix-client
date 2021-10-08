@@ -30007,7 +30007,7 @@ function LoginView(props) {
                             lineNumber: 46
                         },
                         __self: this,
-                        children: "Submit"
+                        children: "Log In"
                     }),
                     /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
                         to: `/register`,
