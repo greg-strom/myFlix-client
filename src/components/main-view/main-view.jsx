@@ -21,7 +21,7 @@ import { ProfileView } from '../profile-view/profile-view';
 import { UpdateView } from '../update-view/update-view';
 
 // #0
-import { setMovies } from '../../actions/actions';
+import { setMovies, setUser } from '../../actions/actions';
 
 import MoviesList from '../movies-list/movies-list';
 /* 
@@ -37,11 +37,11 @@ class MainView extends React.Component {
 
   constructor() {
     super();
-    //initial state for all of these parameters set to null
+    //initial state for all of these parameters set to null; but with Redux, we don't even do that!
     this.state = {
       //movies: [],
       //selectedMovie: null,
-      user: null,
+      // user: null,
       //registered: null
     }
   }
@@ -50,9 +50,7 @@ class MainView extends React.Component {
   componentDidMount() {
     let accessToken = localStorage.getItem('token');
     if (accessToken !== null) {
-      this.setState({
-        user: localStorage.getItem('user')
-      });
+      this.getUser(accessToken)
       this.getMovies(accessToken);
     }
   }
@@ -68,13 +66,9 @@ class MainView extends React.Component {
   /*When a user logs in, this function changes the user property to that user!! */
   onLoggedIn(authData) {
     console.log(authData)
-    this.setState({
-      user: authData.user.Username
-    });
-
+    this.props.setUser(authData.user);
     localStorage.setItem('token', authData.token);
     localStorage.setItem('user', authData.user.Username);
-    this.getMovies(authData.token);
   }
 
   getMovies(token) {
@@ -90,6 +84,17 @@ class MainView extends React.Component {
     });
   }
 
+  getUser(token) {
+    axios.get(`${config.API_URL}/users/${localStorage.getItem('user')}`, {
+      headers: { Authorization: `Bearer ${token}`}
+    }).then(response => {
+      this.props.setUser(response.data);
+      return response.data;
+    }).catch(function (error) {
+      console.log(error);
+    });
+  }
+
   onLoggedOut() {
     localStorage.removeItem('token');
     localStorage.removeItem('user');
@@ -100,7 +105,7 @@ class MainView extends React.Component {
 
   render() {
     let { movies } = this.props;
-    let { user } = this.state;
+    let { user } = this.props;
 
     return (
       <>
@@ -179,7 +184,10 @@ class MainView extends React.Component {
 }
 
 let mapStateToProps = state => {
-  return {movies: state.movies }
+  return {
+    movies: state.movies,
+    user: state.user
+  }
 }
 
-export default connect(mapStateToProps, { setMovies } )(MainView);
+export default connect(mapStateToProps, { setMovies, setUser } )(MainView);
