@@ -38,19 +38,19 @@ class MainView extends React.Component {
   constructor() {
     super();
     //initial state for all of these parameters set to null; but with Redux, we don't even do that!
-    this.state = {
+    //this.state = {
       //movies: [],
       //selectedMovie: null,
       // user: null,
       //registered: null
-    }
+    //}
   }
 
   //this code fetches movie data from my heroku app and puts it in the movies array
   componentDidMount() {
     let accessToken = localStorage.getItem('token');
     if (accessToken !== null) {
-      this.getUser(accessToken)
+      this.getUser(accessToken);
       this.getMovies(accessToken);
     }
   }
@@ -76,8 +76,14 @@ class MainView extends React.Component {
       headers: { Authorization: `Bearer ${token}`}
     })
     .then(response => {
+      console.log('getMovies is now happening!');
       // Assign the result to the state
       this.props.setMovies(response.data);
+      console.log('at line 82 this.props.setMovies(response.data) gives us ');
+      console.log(this.props.setMovies(response.data));
+      console.log('at line 84 this.props.movies looks this:');
+      console.log(this.props.movies);
+      console.log('getMovies has finished happening!!');
     })
     .catch(function (error) {
       console.log(error);
@@ -88,8 +94,16 @@ class MainView extends React.Component {
     axios.get(`${config.API_URL}/users/${localStorage.getItem('user')}`, {
       headers: { Authorization: `Bearer ${token}`}
     }).then(response => {
+      console.log("getUser has started happening!");
+      let user = response.data.Username;
+      console.log('at line 99 the response.data.Username is ' + user);
       this.props.setUser(response.data);
-      //console.log(this.props);
+      console.log("at line 101 this.props.setUser(response.data) gives us");
+      console.log(this.props.setUser(response.data));
+      console.log("and at line 103 this.props.user is ");
+      console.log(this.props.user);
+      console.log('so somehow this.props.setUser(response.data) is failing to change the value of this.props.user');
+      console.log('getUser has finished happening!')
       return response.data;
     }).catch(function (error) {
       console.log(error);
@@ -100,19 +114,19 @@ class MainView extends React.Component {
     localStorage.removeItem('token');
     localStorage.removeItem('user');
     this.props.setUser({});
-    window.open("/","_self");
+    //window.open("/","_self");
   }
 
   render() {
     let { movies } = this.props;
-    let { user } = this.props;
+    let user = this.props.Username;
 
     return (
       <>
         <Router>
           {console.log(user)}
-        {user && <Button onClick={() => { this.onLoggedOut() }}>Logout</Button>}
-        {user && <Button as={Link} to={`/profile`}>Profile</Button>}
+          {user && <Button onClick={() => { this.onLoggedOut() }}>Logout</Button>}
+          {user && <Button as={Link} to={`/profile`}>Profile</Button>}
           <Row className="main-view justify-content-md-center">
             <Route exact path="/" render={() => {
               console.log(user);
@@ -121,11 +135,6 @@ class MainView extends React.Component {
               </Col>
               if (movies.length === 0) return <div className="main-view" />;
               return <MoviesList movies={movies}/>;
-              // return movies.map(m => (
-              //   <Col md={3} key={m._id}>
-              //     <MovieCard movie={m} />
-              //   </Col>
-              // ))
             }} />
             <Route path="/register" render={() => {
               if (user) return <Redirect to="/" />

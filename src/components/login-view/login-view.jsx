@@ -24,8 +24,10 @@ export function LoginView(props) {
     })
     .then(response => {
       const data = response.data;
+      console.log("LoginView handleSubmit happened!");
+      // console.log(data);
       props.onLoggedIn(data);
-      window.open("/", "_self");
+      // window.open("/", "_self");
     })
     .catch(e => {
       console.log('no such user')
