@@ -89,6 +89,7 @@ class MainView extends React.Component {
       headers: { Authorization: `Bearer ${token}`}
     }).then(response => {
       this.props.setUser(response.data);
+      //console.log(this.props);
       return response.data;
     }).catch(function (error) {
       console.log(error);
@@ -98,9 +99,8 @@ class MainView extends React.Component {
   onLoggedOut() {
     localStorage.removeItem('token');
     localStorage.removeItem('user');
-    this.setState({
-      user: null
-    });
+    this.props.setUser({});
+    window.open("/","_self");
   }
 
   render() {
@@ -110,10 +110,12 @@ class MainView extends React.Component {
     return (
       <>
         <Router>
+          {console.log(user)}
         {user && <Button onClick={() => { this.onLoggedOut() }}>Logout</Button>}
         {user && <Button as={Link} to={`/profile`}>Profile</Button>}
           <Row className="main-view justify-content-md-center">
             <Route exact path="/" render={() => {
+              console.log(user);
               if (!user) return <Col>
                 <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
               </Col>

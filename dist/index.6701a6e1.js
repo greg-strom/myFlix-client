@@ -25495,7 +25495,6 @@ function movies(state = [], action) {
     }
 }
 function setUser(state = {
-    FavoriteMovies: []
 }, action) {
     switch(action.type){
         case _actions.SET_USER:
@@ -25650,6 +25649,7 @@ class MainView extends _reactDefault.default.Component {
             }
         }).then((response)=>{
             this.props.setUser(response.data);
+            //console.log(this.props);
             return response.data;
         }).catch(function(error) {
             console.log(error);
@@ -25658,9 +25658,9 @@ class MainView extends _reactDefault.default.Component {
     onLoggedOut() {
         localStorage.removeItem('token');
         localStorage.removeItem('user');
-        this.setState({
-            user: null
+        this.props.setUser({
         });
+        window.open("/", "_self");
     }
     render() {
         let { movies  } = this.props;
@@ -25673,13 +25673,14 @@ class MainView extends _reactDefault.default.Component {
                 },
                 __self: this,
                 children: [
+                    console.log(user),
                     user && /*#__PURE__*/ _jsxRuntime.jsx(_buttonDefault.default, {
                         onClick: ()=>{
                             this.onLoggedOut();
                         },
                         __source: {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 113
+                            lineNumber: 114
                         },
                         __self: this,
                         children: "Logout"
@@ -25689,7 +25690,7 @@ class MainView extends _reactDefault.default.Component {
                         to: `/profile`,
                         __source: {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 114
+                            lineNumber: 115
                         },
                         __self: this,
                         children: "Profile"
@@ -25698,7 +25699,7 @@ class MainView extends _reactDefault.default.Component {
                         className: "main-view justify-content-md-center",
                         __source: {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 115
+                            lineNumber: 116
                         },
                         __self: this,
                         children: [
@@ -25706,6 +25707,7 @@ class MainView extends _reactDefault.default.Component {
                                 exact: true,
                                 path: "/",
                                 render: ()=>{
+                                    console.log(user);
                                     if (!user) return(/*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
                                         children: /*#__PURE__*/ _jsxRuntime.jsx(_loginView.LoginView, {
                                             onLoggedIn: (user1)=>this.onLoggedIn(user1)
@@ -25725,7 +25727,7 @@ class MainView extends _reactDefault.default.Component {
                                 },
                                 __source: {
                                     fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 116
+                                    lineNumber: 117
                                 },
                                 __self: this
                             }),
@@ -25742,7 +25744,7 @@ class MainView extends _reactDefault.default.Component {
                                 },
                                 __source: {
                                     fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 128
+                                    lineNumber: 130
                                 },
                                 __self: this
                             }),
@@ -25768,7 +25770,7 @@ class MainView extends _reactDefault.default.Component {
                                 },
                                 __source: {
                                     fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 134
+                                    lineNumber: 136
                                 },
                                 __self: this
                             }),
@@ -25794,7 +25796,7 @@ class MainView extends _reactDefault.default.Component {
                                 },
                                 __source: {
                                     fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 143
+                                    lineNumber: 145
                                 },
                                 __self: this
                             }),
@@ -25820,7 +25822,7 @@ class MainView extends _reactDefault.default.Component {
                                 },
                                 __source: {
                                     fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 152
+                                    lineNumber: 154
                                 },
                                 __self: this
                             }),
@@ -25846,7 +25848,7 @@ class MainView extends _reactDefault.default.Component {
                                 },
                                 __source: {
                                     fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 161
+                                    lineNumber: 163
                                 },
                                 __self: this
                             }),
@@ -25872,7 +25874,7 @@ class MainView extends _reactDefault.default.Component {
                                 },
                                 __source: {
                                     fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 170
+                                    lineNumber: 172
                                 },
                                 __self: this
                             })
