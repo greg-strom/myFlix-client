@@ -99,12 +99,12 @@ class MainView extends React.Component {
       console.log('at line 99 the response.data.Username is ' + user);
       this.props.setUser(response.data);
       console.log("at line 101 this.props.setUser(response.data) gives us");
-      console.log(this.props.setUser(response.data));
+      // console.log(this.props.setUser(response.data));
       console.log("and at line 103 this.props.user is ");
       console.log(this.props.user);
       console.log('so somehow this.props.setUser(response.data) is failing to change the value of this.props.user');
       console.log('getUser has finished happening!')
-      return response.data;
+      // return response.data;
     }).catch(function (error) {
       console.log(error);
     });
@@ -118,32 +118,31 @@ class MainView extends React.Component {
   }
 
   render() {
-    let { movies } = this.props;
-    let user = this.props.Username;
+    let { movies, user } = this.props;
+    let { Username } = user;
 
     return (
       <>
         <Router>
-          {console.log(user)}
-          {user && <Button onClick={() => { this.onLoggedOut() }}>Logout</Button>}
-          {user && <Button as={Link} to={`/profile`}>Profile</Button>}
+          {Username && <Button onClick={() => { this.onLoggedOut() }}>Logout</Button>}
+          {Username && <Button as={Link} to={`/profile`}>Profile</Button>}
           <Row className="main-view justify-content-md-center">
             <Route exact path="/" render={() => {
               console.log(user);
-              if (!user) return <Col>
+              if (!Username) return <Col>
                 <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
               </Col>
               if (movies.length === 0) return <div className="main-view" />;
               return <MoviesList movies={movies}/>;
             }} />
             <Route path="/register" render={() => {
-              if (user) return <Redirect to="/" />
+              if (Username) return <Redirect to="/" />
               return <Col>
                 <RegistrationView />
               </Col>
             }} />
             <Route path="/movies/:movieId" render={({ match, history }) => {
-              if (!user) return <Col>
+              if (!Username) return <Col>
                 <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
               </Col>
               if (movies.length === 0) return <div className="main-view" />;
@@ -152,7 +151,7 @@ class MainView extends React.Component {
               </Col>
             }} />
             <Route path="/directors/:name" render={({ match, history }) => {
-              if (!user) return <Col>
+              if (!Username) return <Col>
                 <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
               </Col>
               if (movies.length === 0) return <div className="main-view" />;
@@ -161,7 +160,7 @@ class MainView extends React.Component {
               </Col>
             }} />
             <Route path="/genres/:name" render={({ match, history }) => {
-              if (!user) return <Col>
+              if (!Username) return <Col>
                 <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
               </Col>
               if (movies.length === 0) return <div className="main-view" />;
@@ -170,7 +169,7 @@ class MainView extends React.Component {
               </Col>
             }} />
             <Route path="/profile" render={({ match, history }) => {
-              if (!user) return <Col>
+              if (!Username) return <Col>
                 <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
               </Col>
               if (movies.length === 0) return <div className="main-view" />;
@@ -179,7 +178,7 @@ class MainView extends React.Component {
               </Col>
             }} />
             <Route path="/update/:currentuser" render={({ match, history }) => {
-              if (!user) return <Col>
+              if (!Username) return <Col>
                 <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
               </Col>
               if (movies.length === 0) return <div className="main-view" />;

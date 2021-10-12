@@ -84,7 +84,8 @@ export class ProfileView extends React.Component {
 
 
   render() {
-    const { movies, user } = this.props;
+    const { movies, user, onBackClick } = this.props;
+    const { Username } = user;
 
     //When a user exists with favorite movies,  this makes "favoritesList" into an array with all of the user's favorite movies--
     const favoritesList = movies.filter(m => {
@@ -97,7 +98,7 @@ export class ProfileView extends React.Component {
       <>
         <Row  className="text-white">
           <Col>
-            <h1>Username: {`${this.props.user}`}</h1>
+            <h1>Username: {Username}</h1>
             <p>Email: {`${this.state.Email}`}</p>
             <p>Birthday: {`${this.state.Birthday}`}</p>
             <h1>Your Favorites</h1>
