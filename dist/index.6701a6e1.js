@@ -42103,13 +42103,6 @@ function RegistrationView(props) {
     const [birthday, setBirthday] = _react.useState('');
     const handleSubmit = (e)=>{
         e.preventDefault();
-        console.log('maybe this will work');
-        console.log({
-            Username: username,
-            Password: password,
-            Email: email,
-            Birthday: birthday
-        });
         _axiosDefault.default.post(`${_configDefault.default.API_URL}/users`, {
             Username: username,
             Password: password,
@@ -42128,20 +42121,20 @@ function RegistrationView(props) {
         className: "justify-content-md-center",
         __source: {
             fileName: "src/components/registration-view/registration-view.jsx",
-            lineNumber: 45
+            lineNumber: 38
         },
         __self: this,
         children: /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
             md: 8,
             __source: {
                 fileName: "src/components/registration-view/registration-view.jsx",
-                lineNumber: 46
+                lineNumber: 39
             },
             __self: this,
             children: /*#__PURE__*/ _jsxRuntime.jsxs(_formDefault.default, {
                 __source: {
                     fileName: "src/components/registration-view/registration-view.jsx",
-                    lineNumber: 47
+                    lineNumber: 40
                 },
                 __self: this,
                 children: [
@@ -42149,7 +42142,7 @@ function RegistrationView(props) {
                         controlId: "formUsername",
                         __source: {
                             fileName: "src/components/registration-view/registration-view.jsx",
-                            lineNumber: 48
+                            lineNumber: 41
                         },
                         __self: this,
                         children: [
@@ -42157,7 +42150,7 @@ function RegistrationView(props) {
                                 className: "form-label",
                                 __source: {
                                     fileName: "src/components/registration-view/registration-view.jsx",
-                                    lineNumber: 49
+                                    lineNumber: 42
                                 },
                                 __self: this,
                                 children: "Username:"
@@ -42169,7 +42162,7 @@ function RegistrationView(props) {
                                 ,
                                 __source: {
                                     fileName: "src/components/registration-view/registration-view.jsx",
-                                    lineNumber: 50
+                                    lineNumber: 43
                                 },
                                 __self: this
                             })
@@ -42179,7 +42172,7 @@ function RegistrationView(props) {
                         controlId: "formPassword",
                         __source: {
                             fileName: "src/components/registration-view/registration-view.jsx",
-                            lineNumber: 52
+                            lineNumber: 45
                         },
                         __self: this,
                         children: [
@@ -42187,7 +42180,7 @@ function RegistrationView(props) {
                                 className: "form-label",
                                 __source: {
                                     fileName: "src/components/registration-view/registration-view.jsx",
-                                    lineNumber: 53
+                                    lineNumber: 46
                                 },
                                 __self: this,
                                 children: "Password:"
@@ -42199,7 +42192,7 @@ function RegistrationView(props) {
                                 ,
                                 __source: {
                                     fileName: "src/components/registration-view/registration-view.jsx",
-                                    lineNumber: 54
+                                    lineNumber: 47
                                 },
                                 __self: this
                             })
@@ -42209,7 +42202,7 @@ function RegistrationView(props) {
                         controlId: "formEmail",
                         __source: {
                             fileName: "src/components/registration-view/registration-view.jsx",
-                            lineNumber: 56
+                            lineNumber: 49
                         },
                         __self: this,
                         children: [
@@ -42217,7 +42210,7 @@ function RegistrationView(props) {
                                 className: "form-label",
                                 __source: {
                                     fileName: "src/components/registration-view/registration-view.jsx",
-                                    lineNumber: 57
+                                    lineNumber: 50
                                 },
                                 __self: this,
                                 children: "Email:"
@@ -42229,7 +42222,7 @@ function RegistrationView(props) {
                                 ,
                                 __source: {
                                     fileName: "src/components/registration-view/registration-view.jsx",
-                                    lineNumber: 58
+                                    lineNumber: 51
                                 },
                                 __self: this
                             })
@@ -42239,7 +42232,7 @@ function RegistrationView(props) {
                         controlId: "formBirthday",
                         __source: {
                             fileName: "src/components/registration-view/registration-view.jsx",
-                            lineNumber: 60
+                            lineNumber: 53
                         },
                         __self: this,
                         children: [
@@ -42247,7 +42240,7 @@ function RegistrationView(props) {
                                 className: "form-label",
                                 __source: {
                                     fileName: "src/components/registration-view/registration-view.jsx",
-                                    lineNumber: 61
+                                    lineNumber: 54
                                 },
                                 __self: this,
                                 children: "Birthday:"
@@ -42259,7 +42252,7 @@ function RegistrationView(props) {
                                 ,
                                 __source: {
                                     fileName: "src/components/registration-view/registration-view.jsx",
-                                    lineNumber: 62
+                                    lineNumber: 55
                                 },
                                 __self: this
                             })
@@ -42271,7 +42264,7 @@ function RegistrationView(props) {
                         onClick: handleSubmit,
                         __source: {
                             fileName: "src/components/registration-view/registration-view.jsx",
-                            lineNumber: 65
+                            lineNumber: 58
                         },
                         __self: this,
                         children: "Register"
