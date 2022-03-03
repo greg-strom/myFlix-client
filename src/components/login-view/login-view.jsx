@@ -7,6 +7,7 @@ import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { Link } from "react-router-dom";
+import { connect } from 'react-redux';
 
 import './login-view.scss';
 
@@ -23,7 +24,10 @@ export function LoginView(props) {
     })
     .then(response => {
       const data = response.data;
+      console.log("LoginView handleSubmit happened!");
+      // console.log(data);
       props.onLoggedIn(data);
+      // window.open("/", "_self");
     })
     .catch(e => {
       console.log('no such user')
@@ -43,7 +47,7 @@ export function LoginView(props) {
             <Form.Control type="password" value={password} onChange={e => setPassword(e.target.value)} />
         </Form.Group>
         <Button variant="primary" type="submit" onClick={handleSubmit}>
-            Submit
+            Log In
         </Button>
         <Link to={`/register`}>
           <Button variant="primary" type="submit">Register</Button>
