@@ -25,7 +25,6 @@ export function RegistrationView(props) {
     })
     .then(response => {
       const data = response.data;
-      console.log('the response data is as follows:' + data);
       window.open('/', '_self'); // Note: '_self' in this context ensures that the page will open in the current tab. Let's try this again!
     })
     .catch(e => {

@@ -76,14 +76,8 @@ class MainView extends React.Component {
       headers: { Authorization: `Bearer ${token}`}
     })
     .then(response => {
-      console.log('getMovies is now happening!');
       // Assign the result to the state
       this.props.setMovies(response.data);
-      console.log('at line 82 this.props.setMovies(response.data) gives us ');
-      console.log(this.props.setMovies(response.data));
-      console.log('at line 84 this.props.movies looks this:');
-      console.log(this.props.movies);
-      console.log('getMovies has finished happening!!');
     })
     .catch(function (error) {
       console.log(error);
@@ -94,16 +88,8 @@ class MainView extends React.Component {
     axios.get(`${config.API_URL}/users/${localStorage.getItem('user')}`, {
       headers: { Authorization: `Bearer ${token}`}
     }).then(response => {
-      console.log("getUser has started happening!");
       let user = response.data.Username;
-      console.log('at line 99 the response.data.Username is ' + user);
       this.props.setUser(response.data);
-      console.log("at line 101 this.props.setUser(response.data) gives us");
-      // console.log(this.props.setUser(response.data));
-      console.log("and at line 103 this.props.user is ");
-      console.log(this.props.user);
-      console.log('so somehow this.props.setUser(response.data) is failing to change the value of this.props.user');
-      console.log('getUser has finished happening!')
       // return response.data;
     }).catch(function (error) {
       console.log(error);
