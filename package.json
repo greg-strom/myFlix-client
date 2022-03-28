@@ -21,7 +21,7 @@
   "bugs": {
     "url": "https://github.com/gbstrom/myFlix-client/issues"
   },
-  "homepage": "https://github.com/gbstrom/myFlix-client#readme",
+  "homepage": "https://github.com/gbstrom/myFlix-client",
   "dependencies": {
     "axios": "^0.21.4",
     "bootstrap": "^5.1.2",
