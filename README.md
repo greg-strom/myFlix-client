@@ -2,7 +2,7 @@ MyFlix client project
 
 Overview:
 
-This project is one of two client-side projects that I developed for an application called myFlix. It uses React to facilitate user interactions with an existing REST API (https://github.com/gbstrom/movie_api) & MongoDB database that I developed independently.
+This project is one of two client-side projects that I developed for an application called myFlix. It uses React to facilitate user interactions with an existing REST API (https://github.com/greg-strom/movie_api) & MongoDB database that I developed independently.
 
 Technical Requirements (key features):
 
